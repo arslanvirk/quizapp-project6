@@ -1,0 +1,153 @@
+.question-form .submit{
+  width: 100%;
+  border: none;
+  background-color: #1c1c4c;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 7px;
+  margin-top: 20px;
+}
+.question-container .radio{
+  display: block;
+  margin: 9px 0;
+}
+
+@import url(
+  https://fonts.googleapis.com/css?family=Open + Sans:400,
+  400italic,
+  600,
+  600italic,
+  700italic
+);
+.App {
+  align-items: center;
+  background-image: url(https://www.w3schools.com/css/img_lights.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.App h2 {
+  color: white;
+}
+.sweet-loading {
+  margin-top: 20%;
+}
+
+.Quiz {
+  border: 2px solid #00ba76;
+  background-color: #030c0b;
+  opacity: 0.9;
+  height: 300px;
+  width: 300px;
+  padding: 2%;
+  -webkit-box-shadow: 0 15px 10px #00ba76;
+  -moz-box-shadow: 0 15px 10px #00ba76;
+  box-shadow: 0 15px 10px #00ba76;
+}
+.App h1 {
+  color: white;
+}
+.Card button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Card {
+  color: white;
+}
+
+button {
+  color: #fff;
+}
+
+.sub-main {
+  width: 30%;
+  float: left;
+}
+.button-two {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.button-two {
+  border-radius: 4px;
+  background-color: #00bd7d;
+  border: none;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+}
+
+.button-two span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-two span:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-two:hover span {
+  padding-right: 25px;
+}
+
+.button-two:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+  .container{
+    width: 250px;
+    margin-top: -21px;
+}
+.start {
+  max-width: 200px;
+  cursor: pointer;
+  background: linear-gradient(180deg, #ffffff, #ffcc91);
+  border: 2px solid #d38558;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  height: 40px;
+  margin: 20px 0;
+  padding: 0 40px;
+}
