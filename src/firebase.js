@@ -19,7 +19,7 @@ export function initNotification() {
     Notification.requestPermission().then(() => {
         return messaging.getToken()
     }).then((token) => {
-        alert(token);
+        // alert(token);
     }).catch((err) => {
         console.log('An error occurred while retrieving token. ', err);
     });
