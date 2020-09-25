@@ -1,6 +1,8 @@
+import { exception } from 'console';
 import React, { useState } from 'react';
 import './App.css';
 import { QuestionCard } from './Components/QuestionCard';
+import { initNotification } from './firebase';
 import { Difficulty, getQuizData } from './Services/QuizAPI';
 
 function App() {
@@ -12,7 +14,6 @@ function App() {
   let [showResult, setShowResult] = useState(false);
   // let [startQuiz, setstartQuiz] = useState(false);
   const [quizOver, setQuizOver] = useState(true);
-
   const onSubmitHandler = (e: React.FormEvent<EventTarget>, userAnswer: string) => {
     e.preventDefault();
     const questionData = quiz[currentStep];
@@ -32,7 +33,16 @@ function App() {
   const startQuiz = async () => {
     setQuizOver(false);
     setLoading(true);
-    const questionData: Quiz[] = await getQuizData(totalQuestions, Difficulty.EASY);
+    let questionData: Quiz[] = [];
+    try {
+      questionData = await getQuizData(totalQuestions, Difficulty.EASY);
+      localStorage.setItem("qlist", JSON.stringify(questionData));
+    } catch (error) {
+      //console.log("internet not connected");
+      const qdata = localStorage.getItem("qlist");
+      const qlist = qdata === null ? "" : qdata;
+      questionData = JSON.parse(qlist);
+    }
     setQuiz([]);
     setQuiz(questionData);
     SetcurrentStep(0);
@@ -61,7 +71,8 @@ function App() {
               startQuiz();
             }}>
             Begin Quiz
-            </button>
+            </button> 
+          { initNotification()}
         </div>) : null}
       {loading ? (
         <p>
